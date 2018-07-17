@@ -2,7 +2,7 @@
 
 Cytoscape Desktop in Docker image with GUI running using xvfb and VNC server
 
-![cytoscape-desktop](cytoscape-desktop.png)
+![cytoscape_desktop](cytoscape_desktop.png)
 
 ## Notes
 
