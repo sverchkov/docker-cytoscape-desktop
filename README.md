@@ -2,6 +2,8 @@
 
 Cytoscape Desktop in Docker image with GUI running using xvfb and VNC server
 
+![cytoscape-desktop](cytoscape-desktop.png)
+
 ## Build
 ```
 docker build -t cannin/cytoscape-desktop .
