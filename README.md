@@ -1,4 +1,6 @@
-# Cytoscape Desktop in a Docker Container
+# Cytoscape Desktop in a Docker Image
+
+Cytoscape Desktop in Docker image with GUI running using xvfb and VNC server
 
 ## Build
 ```
