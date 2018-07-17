@@ -10,8 +10,6 @@ This Docker image is built on top of the selenium/standalone-chrome-debug image.
 
 https://hub.docker.com/r/selenium/standalone-chrome-debug/
 
-
-
 # Build
 ```
 docker build -t cannin/cytoscape-desktop .
