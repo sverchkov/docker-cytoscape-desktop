@@ -30,7 +30,7 @@ docker rm -f cy; docker run --name cy \
   sh -c '/opt/bin/entry_point.sh & /home/seluser/noVNC/utils/launch.sh --vnc localhost:5900' &\
   (sleep 3; docker exec -it cy sh -c '/home/seluser/cytoscape/start.sh') &
 ```
-_**Be sure to modify '/Users/user/output' to your own local working directory for Cytoscape output**_
+_**Be sure to modify '/Users/user/output' to your own local working directory for Cytoscape output files**_
 
 See below for a for a variety of ways to connect and interact with this instance of Cytoscape in Docker to monitor or 
 troubleshoot. Otherwise, simply wait for Cytoscape to launch before issuing commands via CyREST. For example, wait
