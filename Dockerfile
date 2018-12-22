@@ -1,7 +1,7 @@
 FROM selenium/standalone-chrome-debug:3.13.0
 
 # PARAMETERS
-ENV CYTOSCAPE_VERSION 3.6.1
+ENV CYTOSCAPE_VERSION 3.7.0
 
 # CHANGE USER
 USER root
@@ -31,7 +31,8 @@ RUN tar -zxvf cytoscape-$CYTOSCAPE_VERSION.tar.gz
 RUN rm cytoscape-$CYTOSCAPE_VERSION.tar.gz
 
 # To launch it:
-RUN echo '/home/seluser/cytoscape/cytoscape-unix-3.6.1/cytoscape.sh - R 1234' > /home/seluser/cytoscape/start.sh
+RUN echo "/home/seluser/cytoscape/cytoscape-unix-$CYTOSCAPE_VERSION/cytoscape.sh --rest 1234" > /home/seluser/cytoscape/start.sh
+RUN chmod 777 /home/seluser/cytoscape/start.sh
 
 # INSTALL NOVNC
 WORKDIR /home/seluser

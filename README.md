@@ -12,7 +12,7 @@ https://hub.docker.com/r/selenium/standalone-chrome-debug/
 
 # Build
 ```
-docker build -t cannin/cytoscape-desktop .
+docker build -t cytoscape/cytoscape-desktop .
 ```
 
 # Run
@@ -27,19 +27,40 @@ docker rm -f cy; docker run --name cy \
   -e HUB_ENV_no_proxy=localhost \
   -e SCREEN_WIDTH=1270 -e SCREEN_HEIGHT=700 \
   -e VNC_NO_PASSWORD=1 \
-  cannin/cytoscape-desktop \
-  sh -c '/opt/bin/entry_point.sh & sh /home/seluser/cytoscape/start.sh & /home/seluser/noVNC/utils/launch.sh --vnc localhost:5900'
+  cytoscape/cytoscape-desktop \
+  sh -c '/opt/bin/entry_point.sh & /home/seluser/noVNC/utils/launch.sh --vnc localhost:5900' 
 ```
 
-Files saved in '/home/seluser/cytoscape/output' are accessible on the host system at '/Users/user/output'
+### Launch Cytoscape
+In a separate terminal window, issue the following command:
+```
+docker exec -it cy sh -c '/home/seluser/cytoscape/start.sh' &
+```
 
-### Run interactive session
+See below for a for a variety of ways to connect and interact with this instance of Cytoscape in Docker to monitor or 
+troubleshoot. Otherwise, simply wait for Cytoscape to launch before issuing commands via CyREST. For example, wait
+for this URL to return a valid response:
+```
+http://localhost:1234/v1/version
+```
+ 
+**Note: Files saved in '/home/seluser/cytoscape/output' are accessible on the host system at '/Users/user/output'.** 
+For example, in R using the RCy3 package you will want to prepend this output path to all your save and export args:
+```
+output.path <- '/home/seluser/cytoscape/output/'
+saveSession(paste0(output.path, 'my-session-file'))
+```
+
+_Pro-tip: Before shutting down the container, be sure to check that all your output files have indeed been saved locally._
+
+## Interact
+### Local Shell
 ```
 docker exec -it cy bash
 ```
 
-## VNC
-### RealVNC
+### VNC
+#### RealVNC
 Connect with VNC (https://www.realvnc.com/download/viewer/) using the URL below:
 
 * URL: localhost:5900
@@ -53,13 +74,18 @@ and accessible via this link in Chrome:
 
 chrome://apps/
 
-### noVNC
+#### noVNC
 Built-in web-based VNC accessible at: http://localhost:6080/vnc.html?host=localhost&port=6080
 
-### TightVNC
+#### TightVNC
 Use TightVNC if having problems with right click on MacOS with noVNC and RealVNC: https://www.tightvnc.com/download.php
 
-#### Running Java-Based TightVNC Client
+Running Java-Based TightVNC Client
 ```
 java VncViewer HOST localhost PORT 5900
+```
+
+## Stop
+```
+docker stop cy
 ```
