@@ -16,9 +16,8 @@ docker build -t cytoscape/cytoscape-desktop .
 ```
 
 # Run
-
-## Docker
-### Run container
+## Launch Cytoscape in Docker
+In a local terminal window, issue the following commands to run this docker container and launch Cytoscape:
 ```
 docker rm -f cy; docker run --name cy \
   -v /Users/user/output:/home/seluser/cytoscape/output \
@@ -28,12 +27,8 @@ docker rm -f cy; docker run --name cy \
   -e SCREEN_WIDTH=1270 -e SCREEN_HEIGHT=700 \
   -e VNC_NO_PASSWORD=1 \
   cytoscape/cytoscape-desktop \
-  sh -c '/opt/bin/entry_point.sh & /home/seluser/noVNC/utils/launch.sh --vnc localhost:5900' 
-```
-
-### Launch Cytoscape
-In a separate terminal window, issue the following command:
-```
+  sh -c '/opt/bin/entry_point.sh & /home/seluser/noVNC/utils/launch.sh --vnc localhost:5900' &
+  
 docker exec -it cy sh -c '/home/seluser/cytoscape/start.sh' &
 ```
 
@@ -60,7 +55,7 @@ docker exec -it cy bash
 ```
 
 ### VNC
-#### RealVNC
+##### RealVNC
 Connect with VNC (https://www.realvnc.com/download/viewer/) using the URL below:
 
 * URL: localhost:5900
@@ -74,10 +69,10 @@ and accessible via this link in Chrome:
 
 chrome://apps/
 
-#### noVNC
+##### noVNC
 Built-in web-based VNC accessible at: http://localhost:6080/vnc.html?host=localhost&port=6080
 
-#### TightVNC
+##### TightVNC
 Use TightVNC if having problems with right click on MacOS with noVNC and RealVNC: https://www.tightvnc.com/download.php
 
 Running Java-Based TightVNC Client
@@ -85,7 +80,7 @@ Running Java-Based TightVNC Client
 java VncViewer HOST localhost PORT 5900
 ```
 
-## Stop
+# Stop
 ```
 docker stop cy
 ```
