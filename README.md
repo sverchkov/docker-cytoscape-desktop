@@ -20,7 +20,7 @@ docker build -t cytoscape/cytoscape-desktop .
 In a local terminal window, issue the following commands to run this docker container and launch Cytoscape:
 ```
 docker rm -f cy; docker run --name cy \
-  -v /Users/user/output:/home/seluser/cytoscape/output \ 
+  -v /Users/user/output:/home/seluser/cytoscape/output \
   -p 5900:5900 -p 1234:1234 -p 8080:8080 -p 6080:6080 \
   -e no_proxy=localhost \
   -e HUB_ENV_no_proxy=localhost \
