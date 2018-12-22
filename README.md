@@ -20,17 +20,17 @@ docker build -t cytoscape/cytoscape-desktop .
 In a local terminal window, issue the following commands to run this docker container and launch Cytoscape:
 ```
 docker rm -f cy; docker run --name cy \
-  -v /Users/user/output:/home/seluser/cytoscape/output \
+  -v /Users/user/output:/home/seluser/cytoscape/output \ 
   -p 5900:5900 -p 1234:1234 -p 8080:8080 -p 6080:6080 \
   -e no_proxy=localhost \
   -e HUB_ENV_no_proxy=localhost \
   -e SCREEN_WIDTH=1270 -e SCREEN_HEIGHT=700 \
   -e VNC_NO_PASSWORD=1 \
   cytoscape/cytoscape-desktop \
-  sh -c '/opt/bin/entry_point.sh & /home/seluser/noVNC/utils/launch.sh --vnc localhost:5900' &
-  
-docker exec -it cy sh -c '/home/seluser/cytoscape/start.sh' &
+  sh -c '/opt/bin/entry_point.sh & /home/seluser/noVNC/utils/launch.sh --vnc localhost:5900' &\
+  (sleep 3; docker exec -it cy sh -c '/home/seluser/cytoscape/start.sh') &
 ```
+_Be sure to modify '/Users/user/output' to your own local working directory for Cytoscape output_
 
 See below for a for a variety of ways to connect and interact with this instance of Cytoscape in Docker to monitor or 
 troubleshoot. Otherwise, simply wait for Cytoscape to launch before issuing commands via CyREST. For example, wait
