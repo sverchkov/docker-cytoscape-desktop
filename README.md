@@ -10,7 +10,13 @@ This Docker image is built on top of the selenium/standalone-chrome-debug image.
 
 https://hub.docker.com/r/selenium/standalone-chrome-debug/
 
-# Build
+# Pull or Build
+You have the option of pulling the latest container from DockerHub,
+```
+docker pull cytoscape/cytoscape-desktop:3.7.0 #coming soon!
+```
+
+or you can clone this repo, cd into it and build the container yourself
 ```
 docker build -t cytoscape/cytoscape-desktop .
 ```
