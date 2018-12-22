@@ -35,9 +35,9 @@ _**Be sure to modify '/Users/user/output' to your own local working directory fo
 See below for a for a variety of ways to connect and interact with this instance of Cytoscape in Docker to monitor or 
 troubleshoot. Otherwise, simply wait for Cytoscape to launch before issuing commands via CyREST. For example, wait
 for this URL to return a valid response:
-```
-http://localhost:1234/v1/version
-```
+
+<a href="http://localhost:1234/v1/version" target="_blank">http://localhost:1234/v1/version</a>
+
  
 _**Note: Files saved in '/home/seluser/cytoscape/output' are accessible on the host system at '/Users/user/output'.**_ 
 For example, in R using the RCy3 package you will want to prepend this output path to all your save and export args:
