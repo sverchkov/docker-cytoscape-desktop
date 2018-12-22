@@ -30,7 +30,7 @@ docker rm -f cy; docker run --name cy \
   sh -c '/opt/bin/entry_point.sh & /home/seluser/noVNC/utils/launch.sh --vnc localhost:5900' &\
   (sleep 3; docker exec -it cy sh -c '/home/seluser/cytoscape/start.sh') &
 ```
-_Be sure to modify '/Users/user/output' to your own local working directory for Cytoscape output_
+_**Be sure to modify '/Users/user/output' to your own local working directory for Cytoscape output**_
 
 See below for a for a variety of ways to connect and interact with this instance of Cytoscape in Docker to monitor or 
 troubleshoot. Otherwise, simply wait for Cytoscape to launch before issuing commands via CyREST. For example, wait
@@ -39,7 +39,7 @@ for this URL to return a valid response:
 http://localhost:1234/v1/version
 ```
  
-**Note: Files saved in '/home/seluser/cytoscape/output' are accessible on the host system at '/Users/user/output'.** 
+_**Note: Files saved in '/home/seluser/cytoscape/output' are accessible on the host system at '/Users/user/output'.**_ 
 For example, in R using the RCy3 package you will want to prepend this output path to all your save and export args:
 ```
 output.path <- '/home/seluser/cytoscape/output/'
