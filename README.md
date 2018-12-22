@@ -4,8 +4,6 @@ Cytoscape Desktop in Docker image with GUI running using xvfb and VNC server
 
 ![cytoscape_desktop](cytoscape_desktop.png)
 
-## Notes
-
 This Docker image is built on top of the selenium/standalone-chrome-debug image.
 
 https://hub.docker.com/r/selenium/standalone-chrome-debug/
