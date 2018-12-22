@@ -55,7 +55,7 @@ docker exec -it cy bash
 ```
 
 ### VNC
-##### RealVNC
+#### RealVNC
 Connect with VNC (https://www.realvnc.com/download/viewer/) using the URL below:
 
 * URL: localhost:5900
@@ -69,10 +69,10 @@ and accessible via this link in Chrome:
 
 chrome://apps/
 
-##### noVNC
+#### noVNC
 Built-in web-based VNC accessible at: http://localhost:6080/vnc.html?host=localhost&port=6080
 
-##### TightVNC
+#### TightVNC
 Use TightVNC if having problems with right click on MacOS with noVNC and RealVNC: https://www.tightvnc.com/download.php
 
 Running Java-Based TightVNC Client
