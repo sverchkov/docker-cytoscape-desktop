@@ -11,7 +11,7 @@ https://hub.docker.com/r/selenium/standalone-chrome-debug/
 # Pull or Build
 You have the option of pulling the latest container from DockerHub,
 ```
-docker pull cytoscape/cytoscape-desktop:3.7.0 #coming soon!
+docker pull cytoscape/cytoscape-desktop:3.7.0
 ```
 
 or you can clone this repo, cd into it and build the container yourself
