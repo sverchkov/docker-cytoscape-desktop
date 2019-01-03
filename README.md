@@ -8,6 +8,10 @@ This Docker image is built on top of the selenium/standalone-chrome-debug image.
 
 https://hub.docker.com/r/selenium/standalone-chrome-debug/
 
+Cytoscape content at DockerHub can be found here:
+
+https://hub.docker.com/u/cytoscape
+
 # Pull or Build
 You have the option of pulling the latest container from DockerHub,
 ```
