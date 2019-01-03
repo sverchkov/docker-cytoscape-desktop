@@ -40,6 +40,10 @@ docker rm -f cy; docker run --name cy \
 ```
 _**Be sure to modify '/Users/user/output' to your own local working directory for Cytoscape output files**_
 
+_**Troubleshooting:**_
+* Make sure you don't have your own copy of Cytoscape running locally. You can only connect to a single instance of Cytoscape using the default CyREST port 1234. 
+* Type ```docker image ls``` to check that you have successfully pulls (or built) the container. You may need to use the image hash instead of the image name in the launch command above, i.e., replace ```cytoscape/cytoscape-desktop``` with the hash.
+
 See below for a for a variety of ways to connect and interact with this instance of Cytoscape in Docker to monitor or 
 troubleshoot. Otherwise, simply wait for Cytoscape to launch before issuing commands via CyREST. For example, wait
 for this URL to return a valid response:
