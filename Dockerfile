@@ -14,7 +14,7 @@ RUN tar xf cytoscape-unix-3.8.0.tar.gz && rm cytoscape-unix-3.8.0.tar.gz
 # Set JAVA_HOME From sudo update-alternatives --config java
 RUN echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> /etc/environment
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 1234 5900
 CMD ["/usr/bin/supervisord"]
