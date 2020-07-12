@@ -7,7 +7,7 @@ ENV CYTOSCAPE_VERSION 3.8.0
 USER root
 
 # INSTALL JAVA
-RUN apt-get -y install default-jdk libxcursor1 xvfb supervisor wget x11vnc
+RUN apt-get update && apt-get -y install default-jdk libxcursor1 xvfb supervisor wget x11vnc
 RUN wget --progress=dot:giga --local-encoding=UTF-8 -v https://github.com/cytoscape/cytoscape/releases/download/3.8.0/cytoscape-unix-3.8.0.tar.gz -O cytoscape-unix-3.8.0.tar.gz
 RUN tar xf cytoscape-unix-3.8.0.tar.gz && rm cytoscape-unix-3.8.0.tar.gz
 
