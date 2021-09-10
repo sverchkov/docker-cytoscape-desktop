@@ -15,6 +15,9 @@ https://hub.docker.com/u/cytoscape
 # Build
 Clone this repo, cd into it and build the container yourself
 ```
+git clone https://github.com/kozo2/docker-cytoscape-desktop
+cd docker-cytoscape-desktop
+git checkout -t origin/simplify
 docker build -t cytoscape/cytoscape-desktop .
 ```
 
