@@ -22,7 +22,7 @@ docker build -t cytoscape/cytoscape-desktop .
 ## Launch Cytoscape in Docker
 In a local terminal window, issue the following commands to run this docker container and launch Cytoscape:
 ```
-docker run -p 5900:5900 cytoscape/cytoscape-desktop
+docker run -p 1234:1234 -p 5900:5900 cytoscape/cytoscape-desktop
 ```
 
 ### VNC
