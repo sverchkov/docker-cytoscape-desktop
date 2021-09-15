@@ -29,9 +29,12 @@ docker run -p 1234:1234 -p 5900:5900 cytoscape/cytoscape-desktop
 ```
 
 ### VNC
-#### RealVNC
-Connect with VNC (https://www.realvnc.com/download/viewer/) using the URL below:
+#### UltraVNC viewer
+Connect with UltraVNC viewer (http://www.uvnc.com/) using the URL below:
 
 * URL: localhost:5900
 
 No password is required.
+
+https://user-images.githubusercontent.com/12192/133522202-d2be5f77-488a-436e-a981-71b69a20398e.mp4
+
